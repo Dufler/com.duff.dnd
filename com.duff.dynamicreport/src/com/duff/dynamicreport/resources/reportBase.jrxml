@@ -18,6 +18,9 @@
 	<variable name="PesoTotale" class="java.lang.Double" incrementType="Report" calculation="Sum">
 		<variableExpression><![CDATA[$F{peso}]]></variableExpression>
 	</variable>
+	<variable name="PezziTotali" class="java.lang.Integer" incrementType="Report" calculation="Sum">
+		<variableExpression><![CDATA[$F{pezzi}]]></variableExpression>
+	</variable>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -60,7 +63,7 @@
 			</textField>
 			<staticText>
 				<reportElement x="0" y="0" width="101" height="21" uuid="080324a1-159c-4954-b9bf-475f20190dfc"/>
-				<text><![CDATA[Totale spedizioni:gh]]></text>
+				<text><![CDATA[Totale spedizioni:]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="21" width="81" height="21" uuid="0957b7eb-1b97-4b26-b4be-846580584d29"/>
@@ -77,6 +80,14 @@
 			<textField evaluationTime="Report">
 				<reportElement x="80" y="42" width="120" height="21" uuid="fda7e004-e3e2-4fa1-a2be-73bf3d932cbc"/>
 				<textFieldExpression><![CDATA[$V{PesoMedio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="63" width="81" height="21" uuid="659e0f75-3a54-4e3b-8a23-2af19aacfe12"/>
+				<text><![CDATA[Pezzi totali:]]></text>
+			</staticText>
+			<textField evaluationTime="Report">
+				<reportElement x="80" y="63" width="120" height="21" uuid="fda7e004-e3e2-4fa1-a2be-73bf3d932cbd"/>
+				<textFieldExpression><![CDATA[$V{PezziTotali}]]></textFieldExpression>
 			</textField>
 		</band>
 	</columnHeader>

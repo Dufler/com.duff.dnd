@@ -20,10 +20,9 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Text;
 
-import com.duff.db.dao.ProprietaDao;
-import com.duff.db.entity.Proprieta;
 import com.duff.dynamicreport.JasperReportBuilder;
 import com.duff.dynamicreport.Report;
+import com.duff.dynamicreport.ReportBuilder;
 
 public class SamplePart {
 
@@ -59,26 +58,37 @@ public class SamplePart {
 	}
 	
 	private List<String> createInitialDataModel() {
-		String pathExport = "C:\\Users\\Duff\\Documents\\test.pdf";
-		Report report = new Report("");
-		HashMap<String, Object> parameters = new HashMap<>();
-		parameters.put("DataDa", new Date());
-		parameters.put("DataA", new Date());
-		List<Object> data = new LinkedList<>();
-		try {
-			JasperReportBuilder.buildReportPDF(report, pathExport, parameters, data);
-		} catch (Exception e) {
-			e.printStackTrace();
+		ReportBuilder builder = new ReportBuilder();
+		boolean success = builder.buildReportFile();
+		if (success) {
+			String pathExport = "C:\\Users\\Duff\\Documents\\test.pdf";
+			Report report = new Report("C:\\Users\\Duff\\Desktop\\DnD\\report.jrxml");
+			HashMap<String, Object> parameters = new HashMap<>();
+			parameters.put("DataDa", new Date());
+			parameters.put("DataA", new Date());
+			List<Spedizione> data = new LinkedList<>();
+			Spedizione s1 = new Spedizione(1, 3, 1.5, 0.6, true, new Date());
+			data.add(s1);
+			Spedizione s2 = new Spedizione(3, 1, 3.5, 2.6, true, new Date());
+			data.add(s2);
+			Spedizione s3 = new Spedizione(6, 2, 7.5, 2.6, true, new Date());
+			data.add(s3);
+			try {
+				JasperReportBuilder.buildReportPDF(report, pathExport, parameters, data);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
-		ProprietaDao dao = new ProprietaDao();
-		String key = "qualcosa";
-		Proprieta p = dao.trovaDaChiave(key);
-		if (p == null) {
-			p = new Proprieta();
-			p.setKey(key);
-			p.setValue("test");
-			p = dao.inserisci(p);
-		}		
-		return Arrays.asList("Sample item 1", "Sample item 2", "Sample item 3", "Sample item 4", "Sample item 5", p.toString());
+		
+//		ProprietaDao dao = new ProprietaDao();
+//		String key = "qualcosa";
+//		Proprieta p = dao.trovaDaChiave(key);
+//		if (p == null) {
+//			p = new Proprieta();
+//			p.setKey(key);
+//			p.setValue("test");
+//			p = dao.inserisci(p);
+//		}		
+		return Arrays.asList("Sample item 1", "Sample item 2", "Sample item 3", "Sample item 4", "Sample item 5");
 	}
 }

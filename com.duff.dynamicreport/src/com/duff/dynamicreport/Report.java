@@ -27,14 +27,14 @@ public class Report {
 		return report;
 	}
 	
-//	private InputStream getStream() throws IOException {
-//		InputStream stream = new FileInputStream(path);
-//		return stream;
-//	}
-	
 	private InputStream getStream() throws IOException {
-		InputStream stream = Report.class.getResourceAsStream("/com/duff/dynamicreport/resources/reportBase.jrxml");
+		InputStream stream = new FileInputStream(path);
 		return stream;
 	}
+	
+//	private InputStream getStream() throws IOException {
+//		InputStream stream = Report.class.getResourceAsStream("/com/duff/dynamicreport/resources/reportBase.jrxml");
+//		return stream;
+//	}
 
 }

@@ -40,4 +40,5 @@ Bundle-ClassPath: lib/bcprov-jdk15on-1.52.jar,
  lib/stax-api-1.0.1.jar,
  lib/xmlgraphics-commons-1.5.jar,
  .
-Export-Package: com.duff.dynamicreport
+Export-Package: com.duff.dynamicreport,
+ com.duff.dynamicreport.xml
