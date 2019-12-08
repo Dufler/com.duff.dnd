@@ -1,0 +1,2 @@
+INSERT INTO font (id, name, font, size, bold, italic, underlined, strike_through) VALUES (1, 'SansSerif 12', 'SansSerif', 12, 0, 0, 0, 0);
+INSERT INTO box (id , name, padding, line_width, line_style, line_color) VALUES (1, 'Box semplice', 1.0, 'Solid', '#000000');

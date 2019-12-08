@@ -5,6 +5,13 @@
 	<persistence-unit name="locale" transaction-type="RESOURCE_LOCAL">
 		<class>com.duff.db.entity.VersioneTabella</class>
 		<class>com.duff.db.entity.Proprieta</class>
+		<!-- Elementi grafici -->
+		<class>com.duff.db.entity.elements.Font</class>
+		<class>com.duff.db.entity.elements.Gruppo</class>
+		<class>com.duff.db.entity.elements.Rettangolo</class>
+		<class>com.duff.db.entity.elements.TestoDinamico</class>
+		<class>com.duff.db.entity.elements.TestoStatico</class>
+<!-- 		<class>com.duff.db.entity.elements.</class> -->
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.sqlite.JDBC" />
 			<property name="javax.persistence.jdbc.url" value="jdbc:sqlite:dnd.db" />

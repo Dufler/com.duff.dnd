@@ -1,4 +1,4 @@
-package com.duff.db.entity.elements;
+package com.duff.db.entity.template;
 
 /**
  * Definisce i possibili elementi basici all'interno di una scheda.

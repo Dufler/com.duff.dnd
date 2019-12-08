@@ -9,6 +9,7 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 
 import com.duff.dynamicreport.xml.Band;
+import com.duff.dynamicreport.xml.Box;
 import com.duff.dynamicreport.xml.ColumnHeader;
 import com.duff.dynamicreport.xml.ComplexEvaluationTime;
 import com.duff.dynamicreport.xml.Field;
@@ -16,6 +17,7 @@ import com.duff.dynamicreport.xml.Font;
 import com.duff.dynamicreport.xml.JasperReport;
 import com.duff.dynamicreport.xml.PageHeader;
 import com.duff.dynamicreport.xml.Parameter;
+import com.duff.dynamicreport.xml.Pen;
 import com.duff.dynamicreport.xml.QueryString;
 import com.duff.dynamicreport.xml.ReportElement;
 import com.duff.dynamicreport.xml.StaticText;
@@ -146,6 +148,7 @@ public class ReportBuilder {
 	
 	private TextField getTextField(String expression, int x, int y, int width, int height, Font font, ComplexEvaluationTime evaluation) {
 		TextField textField = new TextField();
+		textField.setBox(getBox());
 		textField.setEvaluationTime(evaluation);
 		textField.setReportElement(getReportElement(x, y, width, height));
 		TextFieldExpression tfExpression = new TextFieldExpression();
@@ -155,6 +158,16 @@ public class ReportBuilder {
 		textElement.setFont(font);
 		textField.setTextElement(textElement);
 		return textField;
+	}
+	
+	private Box getBox() {
+		Box box = new Box();
+		Pen pen = new Pen();
+		pen.setLineColor("#46F20C");
+		pen.setLineStyle("Solid");
+		pen.setLineWidth("1.0");
+		box.setPen(pen);
+		return box;
 	}
 	
 	private ReportElement getReportElement(int x, int y, int width, int height) {

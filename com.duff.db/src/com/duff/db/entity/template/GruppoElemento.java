@@ -1,25 +1,18 @@
-package com.duff.db.entity.elements;
+package com.duff.db.entity.template;
 
 import java.io.Serializable;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
-import javax.persistence.DiscriminatorColumn;
-import javax.persistence.DiscriminatorType;
-import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.Table;
 
-@Entity
-@Table(name="gruppo_elemento")
-@Inheritance(strategy=InheritanceType.SINGLE_TABLE) 
-@DiscriminatorColumn(name="tipoHibernate", discriminatorType = DiscriminatorType.INTEGER, columnDefinition="int")
-@DiscriminatorValue("1")
+//@Entity
+//@Table(name="gruppo_elementi")
+//@Inheritance(strategy=InheritanceType.SINGLE_TABLE) 
+//@DiscriminatorColumn(name="tipoHibernate", discriminatorType = DiscriminatorType.INTEGER, columnDefinition="int")
+//@DiscriminatorValue("1")
 
 
 //@Entity

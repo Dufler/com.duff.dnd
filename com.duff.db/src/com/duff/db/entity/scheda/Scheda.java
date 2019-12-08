@@ -1,4 +1,4 @@
-package com.duff.db.entity.elements;
+package com.duff.db.entity.scheda;
 
 import java.io.Serializable;
 
@@ -8,8 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-public class Gruppo implements Serializable {
-
+public class Scheda implements Serializable {
+	
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -24,8 +24,8 @@ public class Gruppo implements Serializable {
 	@Column(name="descrizione")
 	private String descrizione;
 	
-	public Gruppo() {}
-
+	public Scheda() {}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -42,7 +42,7 @@ public class Gruppo implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Gruppo other = (Gruppo) obj;
+		Scheda other = (Scheda) obj;
 		if (id != other.id)
 			return false;
 		return true;
@@ -50,7 +50,7 @@ public class Gruppo implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Gruppo [id=" + id + ", nome=" + nome + ", descrizione=" + descrizione + "]";
+		return "Scheda [id=" + id + ", nome=" + nome + ", descrizione=" + descrizione + "]";
 	}
 
 	public int getId() {
